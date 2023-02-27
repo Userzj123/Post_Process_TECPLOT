@@ -1,1 +1,8 @@
 build/
+obj/
+
+*.mod
+*.e
+
+
+post.exe
