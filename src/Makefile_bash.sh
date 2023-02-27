@@ -1,3 +1,5 @@
+#!/bin/bash -l
+mkdir obj
 ifort -r8 -mcmodel=large -shared-intel  -c module.f90 -o obj/module.o
 ifort -r8 -mcmodel=large -shared-intel  -c main.f90 -o obj/main.o
 ifort -r8 -mcmodel=large -shared-intel  -c setup.f90 -o obj/setup.o
