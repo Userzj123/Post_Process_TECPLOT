@@ -2,7 +2,7 @@
 ..... POST(INSFIELD) PROCESSING .....
 ..... VISCOSITY STRATIFICATION ON TBL FLOWS .....
 ------------------------------------------------------------------
-Ins. Location                               :       ./results
+Ins. Location                               :./outputs/baseflow
 Instantaneous Field File Starting Number    :           0100
 Instantaneous Field File End Number         :           1000
 Instantaneous Field File Interval           :           0100

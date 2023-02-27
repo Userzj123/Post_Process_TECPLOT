@@ -90,15 +90,6 @@ subroutine writeins3d(varname,imore)
  end do
  O=TecDat(OO,OutArray(1,1,1),1);
 
- do k = 1, nzbox
- do j = 1, nybox
- do i = 1, nxbox
-   OutArray(i,j,k) = theta(i,j,k)
- end do
- end do
- end do
- O=TecDat(OO,OutArray(1,1,1),1);
-
  O=TecEnd();
 
  deallocate( OutArray )
