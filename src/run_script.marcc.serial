@@ -1,0 +1,15 @@
+#!/bin/bash -l
+#SBATCH --job-name=serial-job
+#SBATCH --time=6:0:0
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --partition=shared
+#SBATCH --mem=24000
+#SBACTH --mail-type=end
+#SBATCH --mail-user=jlee540@jhu.edu
+
+
+# run your job
+
+./01_Insfield.e > run_history
+

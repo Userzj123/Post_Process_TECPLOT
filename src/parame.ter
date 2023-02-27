@@ -1,0 +1,17 @@
+------------------------------------------------------------------
+..... POST(INSFIELD) PROCESSING .....
+..... VISCOSITY STRATIFICATION ON TBL FLOWS .....
+------------------------------------------------------------------
+Ins. Location                               :       ./results
+Instantaneous Field File Starting Number    :           0100
+Instantaneous Field File End Number         :           1000
+Instantaneous Field File Interval           :           0100
+Streamwise domain size, Lx/pi               :            2.0
+Spanwise domain size, Ly/pi                 :            1.0
+vertical domain size, Lz                    :            1.0
+Reynolds number in input                    :          180.0
+Write Grid (Yes=1)                          :              1
+Write 3D Instantaneous Field (Yes=1)        :              1
+Write 2D Instantaneous Field (Yes=1)        :              0
+------------------------------------------------------------------
+1234567890123456789012345678901234567890123456789012345678901234567890
