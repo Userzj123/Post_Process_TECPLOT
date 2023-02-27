@@ -33,7 +33,7 @@ subroutine writeins3d(varname,imore)
  !O=TecIni111('InsField'//char(0), &        ! title
 ! MZW: Use TecIni
  O=TecIni('InsField'//char(0), &        ! title
-          'x y z u v w'//char(0),       &        ! variables
+          'x y z u v w theta'//char(0),       &        ! variables
           trim(outfname)//cidx//'.plt'//char(0), & ! Fname
           '.'//char(0), &                  ! ScratchDir
           FileType,Debug,VIsDouble);
@@ -85,6 +85,15 @@ subroutine writeins3d(varname,imore)
  do j = 1, nybox
  do i = 1, nxbox
    OutArray(i,j,k) = w(i,j,k)
+ end do
+ end do
+ end do
+ O=TecDat(OO,OutArray(1,1,1),1);
+
+ do k = 1, nzbox
+ do j = 1, nybox
+ do i = 1, nxbox
+   OutArray(i,j,k) = theta(i,j,k)
  end do
  end do
  end do
