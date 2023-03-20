@@ -20,7 +20,8 @@ module mvariable
 use mparameter
 implicit none
 real(real_p),allocatable,dimension(:,:,:)::    &
-   u,v,w,p,lam, theta
+   u,v,w,p,lam
+REAL(real_p), ALLOCATABLE, dimension(:, :, :, :):: theta
 end module mvariable
 !===============================================
 module mgeomdata

@@ -1,4 +1,6 @@
 #!/bin/bash -l
+rm ./post.exe
+make clean
 mkdir obj
 ifort -r8 -mcmodel=large -shared-intel  -c module.f90 -o obj/module.o
 ifort -r8 -mcmodel=large -shared-intel  -c main.f90 -o obj/main.o

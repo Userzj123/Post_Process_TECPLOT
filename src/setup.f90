@@ -64,7 +64,7 @@ subroutine setup
       allocate( u(ngx,ngy,ngz) )
       allocate( v(ngx,ngy,ngz) )
       allocate( w(ngx,ngy,ngz) )
-      allocate( theta(ngx,ngy,ngz) )
+      allocate( theta(ngx,ngy,ngz, ntheta) )
 
 return
 end subroutine setup

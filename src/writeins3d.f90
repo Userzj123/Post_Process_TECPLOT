@@ -6,7 +6,7 @@ subroutine writeins3d(varname,imore)
  use mreadavg
  implicit none
  double precision, dimension(nzboxp,nxboxp,nyboxp)::dat
- integer::i,j,k,ii,jj,kk,imore
+ integer::i,j,k,ii,jj,kk,imore, nT
  real,parameter :: str_factor = 1.5
  real :: tmp
  character(70)::outfname
@@ -33,7 +33,7 @@ subroutine writeins3d(varname,imore)
  !O=TecIni111('InsField'//char(0), &        ! title
 ! MZW: Use TecIni
  O=TecIni('InsField'//char(0), &        ! title
-          'x y z u v w theta'//char(0),       &        ! variables
+          'x y z u v w theta1 theta2 theta3'//char(0),       &        ! variables
           trim(outfname)//cidx//'.plt'//char(0), & ! Fname
           '.'//char(0), &                  ! ScratchDir
           FileType,Debug,VIsDouble);
@@ -90,14 +90,18 @@ subroutine writeins3d(varname,imore)
  end do
  O=TecDat(OO,OutArray(1,1,1),1);
 
+
+!------ OUTPUT THETA DATA-----------
+ do nT = 1, ntheta
  do k = 1, nzbox
  do j = 1, nybox
  do i = 1, nxbox
-   OutArray(i,j,k) = theta(i,j,k)
+   OutArray(i,j,k) = theta(i,j,k, nT)
  end do
  end do
  end do
  O=TecDat(OO,OutArray(1,1,1),1);
+ end do
 
  O=TecEnd();
 
