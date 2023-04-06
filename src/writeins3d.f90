@@ -57,7 +57,7 @@ subroutine writeins3d(varname,imore)
  O=TecDat(OO,OutArray(1,1,1),1);
 
  do k = 1, nzbox
-    OutArray(:, :, k) = (tanh((dz * real(k - 1, real_p)-real(1, real_p)) * str_factor)/tanh(str_factor) + real(1,real_p))*2.0
+    OutArray(:, :, k) = (tanh((dz * real(k - 1, real_p)-real(1, real_p)) * str_factor)/tanh(str_factor) + real(1,real_p))*1.0
  end do
  O=TecDat(OO,OutArray(1,1,1),1);
 
