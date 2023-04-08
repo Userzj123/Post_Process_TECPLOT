@@ -6,9 +6,10 @@
   implicit none
   integer :: imore
   integer :: length
-  integer :: Tlength
+  integer :: k
   character(8)::cidx
   character(50)::cfnm
+  character(150)::ffname1
 
   write(cidx,fmt='(i8.8)') 0!imore
 
@@ -16,7 +17,6 @@
   !       Read in velocity field
   !---------------------------------------------------------
   inquire(iolength=length) u
-  Tlength = ntheta * length
   write(cidx,fmt='(i8.8)') imore
   open (18,file=trim(cfn)//'baseflow/u_base.'//cidx,form="unformatted", &
            access="direct",action='read',status='old',recl=length)
@@ -36,11 +36,13 @@
   write(*,*) '   * Reading w-component... done'
   close(18)
 
-  open (18,file=trim(cfn)//'/thetas.'//cidx,form="unformatted", &
-           access="direct",action='read',status='old',recl=Tlength)
-        read (18,rec=1) theta
+  do k = 1, ntheta
+  write(ffname1,'(a,i2.2,a)')'theta.', k, '.'
+  open (18,file=trim(cfn)//trim(ffname1)//cidx,form="unformatted", &
+           access="direct",action='read',status='old',recl=length)
+        read (18,rec=1) theta(1:ngx, 1:ngy, 1:ngz, k)
   write(*,*) '   * Reading theta-component... done'
   close(18)
-
+  end do
   return
   end subroutine read_restart
