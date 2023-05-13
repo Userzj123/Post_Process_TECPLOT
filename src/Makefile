@@ -19,7 +19,7 @@ F90FILES = module.f90 \
 #F77FILES = readavg.f \
 
 ##LIBS = /home/software/tec360/lib/tecio64.a -lstdc++
-LIBS = /home/ext-zyou6474/LESGO/Post_processing_TECPLOT/libtecio.a -lstdc++
+LIBS = /home/zyou6474/tasks/channel_flow/Post_Process_TECPLOT/src/libtecio.a -lstdc++
 
 CFILES = 
 
@@ -28,7 +28,7 @@ CFILES =
 #
 OFILES = $(F90FILES:.f90=.o) $(F77FILES:.f=.o) $(CFILES:.c=.o)
 
-LOPTS = -L/opt/intel/mkl/lib/intel64 \
+LOPTS = -L/nas/app/intel/compilers_and_libraries_2018.2.199/linux/mkl/lib/intel64 \
  -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread
 
 # INTEL compilers

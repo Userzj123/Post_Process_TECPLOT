@@ -14,7 +14,6 @@ program main
 
 !      call readavg
       if( wgrid == 1 ) call write_grid
-
       navg = 0
 !====================================================
       timestep : do imore = inssn, insen, insitv
@@ -24,7 +23,7 @@ program main
       write(*,102) imore
 !      write(*,103) navg
       write(*,101)
-
+      print*, "why"
       call read_restart(imore)
 !      if(iwrite2d==1) call writeins2d_2(u(1,1:ngx,1:ngy),v(1,1:ngx,1:ngy),'uraw','vraw',imore)
 !      if(iwrite3d==1) call writeins3d(u,'uraw',imore)
